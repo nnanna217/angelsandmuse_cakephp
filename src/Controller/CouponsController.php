@@ -12,6 +12,14 @@ use App\Controller\AppController;
  */
 class CouponsController extends AppController
 {
+    
+    
+    public $components = array('RequestHandler');
+    
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['coupon','coupons','getDiscount']);
+    }
 
     /**
      * Index method
@@ -25,6 +33,48 @@ class CouponsController extends AppController
         $this->set(compact('coupons'));
     }
 
+    /**
+     * GetEvents API method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function coupon($id)
+    {
+        $coupon = $this->Coupons->get($id);
+        $this->set([
+            'coupon' => $coupon,
+            '_serialize' => ['coupon']
+        ]);
+        
+    }
+    
+    public function getDiscount($slug, $email)
+    {
+        $this->loadModel('CouponsUsed');
+        $coupon = $this->Coupons->find()->where(['slug'=>$slug])->toArray();
+        $couponUsed = $this->CouponsUsed->find('all', array('conditions' =>
+                    array('CouponsUsed.email' => $email, 'CouponsUsed.coupon_id' => $coupon[0]->id)))->toArray();
+        $isUsed = $couponUsed ? true : false;
+        
+        $this->set([
+            'coupon' => $coupon,
+            'isUsed' => $isUsed,
+            '_serialize' => ['coupon','isUsed']
+        ]);
+        
+    }
+    
+    public function coupons()
+    {
+        $coupons = $this->Coupons->find('all');
+        $this->set([
+            'coupons' => $coupons,
+            '_serialize' => ['coupons']
+        ]);
+    }
+    
+    
+    
     /**
      * View method
      *

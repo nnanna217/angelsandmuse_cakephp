@@ -70,7 +70,7 @@ class CouponsTable extends Table
 
         $validator
             ->scalar('slug')
-            ->maxLength('slug', 6)
+            ->maxLength('slug', 12)
             ->requirePresence('slug', 'create')
             ->notEmpty('slug');
 

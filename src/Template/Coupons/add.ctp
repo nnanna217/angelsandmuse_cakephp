@@ -20,6 +20,8 @@
             echo $this->Form->control('name');
             echo $this->Form->control('discount');
             echo $this->Form->control('slug');
+            echo $this->Form->control('start', ['type' => 'date']);
+            echo $this->Form->control('end', ['type' => 'date']);
             echo $this->Form->control('status');
         ?>
     </fieldset>

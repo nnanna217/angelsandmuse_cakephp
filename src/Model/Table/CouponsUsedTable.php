@@ -40,11 +40,7 @@ class CouponsUsedTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
-
-        $this->belongsTo('Users', [
-            'foreignKey' => 'user_id',
-            'joinType' => 'INNER'
-        ]);
+        
         $this->belongsTo('Coupons', [
             'foreignKey' => 'coupon_id',
             'joinType' => 'INNER'
@@ -75,7 +71,6 @@ class CouponsUsedTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['coupon_id'], 'Coupons'));
 
         return $rules;

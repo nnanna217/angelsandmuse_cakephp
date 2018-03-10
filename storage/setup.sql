@@ -10,7 +10,7 @@
 
 CREATE DATABASE angelsandmuse;
 
-use angelsandmuse;
+use angelsan_angmuse;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -60,3 +60,28 @@ CREATE TABLE `coupons_used` (
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO users (email, password, created, modified) VALUES ('info@angelsandmuse.com', 'sekret', NOW(), NOW());
+
+ALTER TABLE angelsan_angmuse.events
+ADD registration_label VARCHAR(255) NULL DEFAULT NULL;
+
+ALTER TABLE angelsan_angmuse.events
+ADD registration_link VARCHAR(255) NULL DEFAULT NULL;
+
+ALTER TABLE angelsan_angmuse.events
+ADD gallery_label VARCHAR(255) NULL DEFAULT NULL;
+
+ALTER TABLE angelsan_angmuse.events
+ADD gallery_link VARCHAR(255) NULL DEFAULT NULL;
+
+ALTER TABLE angelsan_angmuse.events
+ADD last_edited_by INT NULL DEFAULT NULL;
+
+ALTER TABLE angelsan_angmuse.coupons
+ADD `end` DATE NULL,
+ADD `start` DATE NULL;
+
+ALTER TABLE angelsan_angmuse.coupons_used
+DROP COLUMN `user_id`,
+ADD `email` VARCHAR(255);
+
+ALTER TABLE `angelsandmuse`.`coupons` CHANGE `slug` `slug` VARCHAR(12) CHARSET utf8 COLLATE utf8_unicode_ci NOT NULL; 

@@ -35,6 +35,8 @@ class Coupon extends Entity
         'status' => true,
         'created' => true,
         'updated' => true,
-        'coupons_used' => true
+        'coupons_used' => true,
+        'end' => true,
+        'start' => true
     ];
 }

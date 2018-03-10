@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Routes configuration
  *
@@ -17,7 +18,6 @@
  * @link          https://cakephp.org CakePHP(tm) Project
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
 use Cake\Core\Plugin;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
@@ -49,10 +49,16 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-    
-    $routes->connect('/logout', array('controller' => 'Users', 'action' =>'logout'));
-    $routes->connect('/home', array('controller' => 'Homes', 'action' =>'index'));
+    $routes->setExtensions(['json']);
+    $routes->connect('/', ['controller' => 'Users', 'action' => 'login']);
+
+    $routes->connect('/logout', array('controller' => 'Users', 'action' => 'logout'));
+    $routes->connect('/home', array('controller' => 'Homes', 'action' => 'index'));
+//    $routes->connect('/coupons', array('controller' => 'Coupons', 'action' =>'getAllCoupon'));
+//    $routes->connect('/home', array('controller' => 'Homes', 'action' =>'index'));
+    $routes->resources('Coupons');
+    $routes->resources('CouponsUsed');
+    $routes->resources('Events');
 
 
     /**

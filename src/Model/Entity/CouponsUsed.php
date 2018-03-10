@@ -28,7 +28,7 @@ class CouponsUsed extends Entity
      * @var array
      */
     protected $_accessible = [
-        'user_id' => true,
+        'email' => true,
         'coupon_id' => true,
         'created' => true,
         'updated' => true,

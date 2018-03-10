@@ -33,6 +33,11 @@ class Event extends Entity
         'event_desc' => true,
         'featured_img' => true,
         'created_by' => true,
+        'registration_label' => true,
+        'registration_link' => true,
+        'gallery_label' => true,
+        'gallery_link' => true,
+        'last_link' => true,
         'created' => true,
         'modified' => true
     ];

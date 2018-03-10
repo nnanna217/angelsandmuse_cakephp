@@ -21,11 +21,14 @@
     <fieldset>
         <legend><?= __('Edit Event') ?></legend>
         <?php
-            echo $this->Form->control('event');
+            echo $this->Form->control('event',array('label'=>'Name of Event'));
             echo $this->Form->control('event_date');
             echo $this->Form->control('event_desc');
             echo $this->Form->control('featured_img');
-            echo $this->Form->control('created_by');
+            echo $this->Form->control('registration_label');
+            echo $this->Form->control('registration_link');
+            echo $this->Form->control('gallery_label');
+            echo $this->Form->control('galery_link');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

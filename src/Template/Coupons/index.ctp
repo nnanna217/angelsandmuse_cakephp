@@ -21,7 +21,8 @@
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('discount') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('slug') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('status') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('start') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('end') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('updated') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -34,7 +35,8 @@
                 <td><?= h($coupon->name) ?></td>
                 <td><?= $this->Number->format($coupon->discount) ?></td>
                 <td><?= h($coupon->slug) ?></td>
-                <td><?= h($coupon->status) ?></td>
+                <td><?= h($coupon->start) ?></td>
+                <td><?= h($coupon->end) ?></td>
                 <td><?= h($coupon->created) ?></td>
                 <td><?= h($coupon->updated) ?></td>
                 <td class="actions">

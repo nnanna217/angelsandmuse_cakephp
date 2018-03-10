@@ -12,7 +12,19 @@ use App\Controller\AppController;
  */
 class EventsController extends AppController
 {
+    
+    public $paginate = [
+        'limit' => 10,
+        'order' => [
+            'Events.event_date' => 'desc'
+        ]
+    ];
 
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['events']);
+    }
+    
     /**
      * Index method
      *
@@ -25,6 +37,20 @@ class EventsController extends AppController
         $this->set(compact('events'));
     }
 
+    /**
+     * Events API method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function events()
+    {
+        $events = $this->paginate($this->Events);
+        $this->set([
+            'events' => $events,
+            '_serialize' => ['events']
+        ]);
+    }
+    
     /**
      * View method
      *
@@ -51,6 +77,7 @@ class EventsController extends AppController
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
             $event = $this->Events->patchEntity($event, $this->request->getData());
+            $event->created_by = $this->Auth->user('id');
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
 

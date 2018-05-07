@@ -78,6 +78,7 @@ try {
  * shared configuration.
  */
 //Configure::load('app_local', 'default');
+Configure::write('Froala.editorOptions', array('height' => '300px'));
 
 /*
  * When debug = true the metadata cache should only last
@@ -206,6 +207,7 @@ Type::build('timestamp')
  * Plugin::load('Migrations'); //Loads a single plugin named Migrations
  *
  */
+Plugin::load('Froala');
 
 /*
  * Only try to load DebugKit in development mode

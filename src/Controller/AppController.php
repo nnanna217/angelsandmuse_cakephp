@@ -38,6 +38,9 @@ class AppController extends Controller {
      *
      * @return void
      */
+    
+    public $helpers = array('Froala.Froala');
+
     public function initialize() {
         parent::initialize();
 

@@ -29,6 +29,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css') ?>
+    <?= $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.1/css/froala_editor.pkgd.min.css') ?>
+    <?= $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.1/css/froala_style.min.css') ?>
+        
+    <?=$this->Html->script(array('http://code.jquery.com/jquery-1.11.0.min.js','https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.1/js/froala_editor.pkgd.min.js'));?>        
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

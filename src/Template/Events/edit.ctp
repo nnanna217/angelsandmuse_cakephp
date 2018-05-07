@@ -23,6 +23,7 @@
         <?php
             echo $this->Form->control('event',array('label'=>'Name of Event'));
             echo $this->Form->control('event_date');
+            echo $this->Froala->editor('textarea', array('minHeight' => '200px', 'maxHeight' => '400px'));
             echo $this->Form->control('event_desc');
             echo $this->Form->control('featured_img');
             echo $this->Form->control('registration_label');

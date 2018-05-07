@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Event[]|\Cake\Collection\CollectionInterface $events
@@ -8,8 +9,9 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Event'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Add a New User'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Coupons Used'), ['controller' => 'CouponsUsed', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Add a New User'), ['controller' => 'Userss','action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Events'), ['action' => 'index']) ?></li>
+
     </ul>
 </nav>
 <div class="events index large-9 medium-8 columns content">

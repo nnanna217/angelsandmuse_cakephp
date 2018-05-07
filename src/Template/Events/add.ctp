@@ -7,8 +7,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['action' => 'index']) ?></li>
-    </ul>
+<li><?= $this->Html->link(__('New Event'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Add a New User'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Events'), ['action' => 'index']) ?></li>    </ul>
 </nav>
 <div class="events form large-9 medium-8 columns content">
     <?= $this->Form->create($event) ?>
@@ -22,8 +23,7 @@
             echo $this->Form->control('registration_label');
             echo $this->Form->control('registration_link');
             echo $this->Form->control('gallery_label');
-            echo $this->Form->control('galery_link');
-            echo $this->Form->control('created_by');
+            echo $this->Form->control('gallery_link');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

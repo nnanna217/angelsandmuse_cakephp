@@ -43,7 +43,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </ul>
             <div class="top-bar-section">
                 <ul class="right">
-                    <li><?= $this->Html->link(__('Home'), ['controller' => 'Homes','action' => 'index']) ?></li>
+                    <li><?= $this->Html->link(__('Home'), ['controller' => 'Events','action' => 'index']) ?></li>
 
                     <?php if($this->request->session()->read('Auth.User.id')):?>
                     <li><?= $this->Html->link(__('Log Out'), ['controller' => 'Users', 'action' => 'logout']) ?></li>

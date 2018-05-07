@@ -28,7 +28,7 @@
             echo $this->Form->control('registration_label');
             echo $this->Form->control('registration_link');
             echo $this->Form->control('gallery_label');
-            echo $this->Form->control('galery_link');
+            echo $this->Form->control('gallery_link');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

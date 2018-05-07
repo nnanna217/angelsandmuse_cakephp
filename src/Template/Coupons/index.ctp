@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Coupon[]|\Cake\Collection\CollectionInterface $coupons
@@ -7,9 +8,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Coupon'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Coupons Used'), ['controller' => 'CouponsUsed', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Coupons Used'), ['controller' => 'CouponsUsed', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Add a New Coupon'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Coupons'), ['action' => 'index']) ?></li>
+
     </ul>
 </nav>
 <div class="coupons index large-9 medium-8 columns content">

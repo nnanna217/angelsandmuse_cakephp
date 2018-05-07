@@ -13,9 +13,8 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $coupon->id)]
             )
         ?></li>
+        <li><?= $this->Html->link(__('Add a New Coupon'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Coupons'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Coupons Used'), ['controller' => 'CouponsUsed', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Coupons Used'), ['controller' => 'CouponsUsed', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="coupons form large-9 medium-8 columns content">

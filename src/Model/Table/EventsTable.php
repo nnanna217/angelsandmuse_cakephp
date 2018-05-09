@@ -37,6 +37,11 @@ class EventsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Josegonzalez/Upload.Upload', [
+                'featured_img'=>['path'=>'files{DS}{model}{DS}{field}{DS}']
+//                [
+//            'featured_img',
+        ]);
     }
 
     /**
@@ -67,11 +72,11 @@ class EventsTable extends Table
             ->requirePresence('event_desc', 'create')
             ->notEmpty('event_desc');
 
-        $validator
-            ->scalar('featured_img')
-            ->maxLength('featured_img', 255)
-            ->requirePresence('featured_img', 'create')
-            ->notEmpty('featured_img');
+//        $validator
+//            ->scalar('featured_img')
+//            ->maxLength('featured_img', 255)
+//            ->requirePresence('featured_img', 'create')
+//            ->notEmpty('featured_img');
 
         $validator
             ->integer('created_by')

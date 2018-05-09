@@ -19,26 +19,18 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('event') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('event_date') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('featured_img') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created_by') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($events as $event): ?>
             <tr>
-                <td><?= $this->Number->format($event->id) ?></td>
                 <td><?= h($event->event) ?></td>
                 <td><?= h($event->event_date) ?></td>
                 <td><?= h($event->featured_img) ?></td>
-                <td><?= $this->Number->format($event->created_by) ?></td>
-                <td><?= h($event->created) ?></td>
-                <td><?= h($event->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $event->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $event->id]) ?>

@@ -9,10 +9,9 @@
         "cakephp/cakephp": "3.5.*",
         "cakephp/migrations": "^1.0",
         "cakephp/plugin-installer": "^1.0",
-        "froala/wysiwyg-cake2": "^2.8",
+        "josegonzalez/cakephp-upload": "^4.0",
         "josegonzalez/dotenv": "2.*",
-        "mobiledetect/mobiledetectlib": "2.*",
-        "stfalcon/tinymce-bundle": "^2.3"
+        "mobiledetect/mobiledetectlib": "2.*"
     },
     "require-dev": {
         "cakephp/bake": "^1.1",

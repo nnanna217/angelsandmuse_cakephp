@@ -38,7 +38,7 @@ class EventsTable extends Table
 
         $this->addBehavior('Timestamp');
         $this->addBehavior('Josegonzalez/Upload.Upload', [
-                'featured_img'=>['path'=>'files{DS}{model}{DS}{field}{DS}']
+                'featured_img'=>['path'=>'webroot/uploads/']
 //                [
 //            'featured_img',
         ]);

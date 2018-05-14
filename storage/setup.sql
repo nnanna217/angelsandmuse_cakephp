@@ -8,7 +8,7 @@
  * Created: Mar 7, 2018
  */
 
-CREATE DATABASE angelsandmuse;
+CREATE DATABASE angelsan_angmuse;
 
 use angelsan_angmuse;
 
@@ -59,7 +59,7 @@ CREATE TABLE `coupons_used` (
   KEY `coupons_used_coupon_id_foreign` (`coupon_id`)
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO users (email, password, created, modified) VALUES ('info@angelsandmuse.com', 'sekret', NOW(), NOW());
+INSERT INTO users (email, password, created, modified) VALUES ('info@angelsan_angmuse.com', 'sekret', NOW(), NOW());
 
 ALTER TABLE angelsan_angmuse.events
 ADD registration_label VARCHAR(255) NULL DEFAULT NULL;
@@ -84,4 +84,4 @@ ALTER TABLE angelsan_angmuse.coupons_used
 DROP COLUMN `user_id`,
 ADD `email` VARCHAR(255);
 
-ALTER TABLE `angelsandmuse`.`coupons` CHANGE `slug` `slug` VARCHAR(12) CHARSET utf8 COLLATE utf8_unicode_ci NOT NULL; 
+ALTER TABLE `angelsan_angmuse`.`coupons` CHANGE `slug` `slug` VARCHAR(12) CHARSET utf8 COLLATE utf8_unicode_ci NOT NULL; 
